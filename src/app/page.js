@@ -21,7 +21,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
 import Navbar from "./navbar";
-import CartItem from "./cartItem";
+import CartList from "./cartList";
 
 export default function Home(){
   const [products, setProducts] = useState([])
@@ -31,7 +31,7 @@ useEffect(()=>{
 }, [])
 
 const getDataProducts = async() =>{
-  const {data} = await axios ("https://fakestoreapi.com/products?limit=5");
+  const {data} = await axios ("https://fakestoreapi.com/products?limit=10");
   setProducts(data);
 }
 
@@ -40,7 +40,7 @@ console.log(products)
   return(
     <div className="bg-[#F7F7F7] min-h-screen">
       <Navbar />
-      <CartItem/>
+      <CartList products={products} />
     </div>
   )
 }

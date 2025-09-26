@@ -21,12 +21,29 @@
 //             <span className="text-center">Loading Page</span>
 //         ):(
 //             product.map((item) =>(
-//                 <CartItem 
+//                 <CartItem
 //                 key={item.id}
 //                 product={item}
-//                 setItemProduk={setItemProduk} />  
+//                 setItemProduk={setItemProduk} />
 //             ))
 //         )}
 //         </>
 //     )
 // }
+
+"use client";
+import CartItem from "./cartItem";
+
+export default function CartList({products}) {
+  return (
+    <div>
+      {products.length == 0 ? (
+        <span>Loding</span>
+      ) : (
+        products.map((product) => (
+          <CartItem key={product.id} product={product} />
+        ))
+      )}
+    </div>
+  );
+}
