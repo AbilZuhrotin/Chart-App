@@ -31,7 +31,7 @@ useEffect(()=>{
 }, [])
 
 const getDataProducts = async() =>{
-  const {data} = await axios ("https://fakestoreapi.com/products?limit=10");
+  const {data} = await axios ("https://fakestoreapi.com/products?limit=5");
   setProducts(data);
 }
 
