@@ -44,32 +44,8 @@ export default function CartItem({ product }) {
             <p className="font-semibold">{product.price}</p>
           </div>
         </div>
-        <Counter />
-        <p className="w-fit md:w-10 font-bold text-[#FFB22C]">{product.price}</p>
+        <Counter product={product}/>
       </div>
-      {/* <div className="flex flex-row items-center justify-between p-7 text-[#333333]">
-        <div className="flex flex-row">
-          <div className="flex flex-row gap-4">
-            <img src={product.image} className="w-32 h-32 object-contain" />
-            <div className="flex flex-col gap-2 ">
-              <div>
-                <p className="">{product.title}</p>
-                <p className="bg-[#854836] text-white px-2 py-1 inline-block">{product.category}</p>
-              </div>
-            <div className="flex items-center gap-1 text-sm text-gray-600">
-              <Star className="text-[#FFB22C]"/>
-              <p>{product.rating.rate}</p>
-              <p>({product.rating.count})</p>
-            </div>
-            <p>{product.price}</p>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-between items-center mt-2 gap-12">
-          <Counter />
-          <p className="font-bold text-[#FFB22C]">{product.price}</p>
-        </div>
-      </div> */}
       <hr className="text-[#706C61]"></hr>
     </div>
   );
