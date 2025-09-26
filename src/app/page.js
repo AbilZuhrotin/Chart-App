@@ -17,13 +17,15 @@
 // }
 
 
-"use cilent"
+"use client"
 import Navbar from "./navbar";
+import CartItem from "./cartItem";
 
 export default function Home(){
   return(
-    <>
+    <div className="bg-[#F7F7F7] min-h-screen">
       <Navbar />
-    </>
+      <CartItem/>
+    </div>
   )
 }

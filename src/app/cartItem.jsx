@@ -19,41 +19,53 @@
 //   );
 // }
 
-"use client"
+"use client";
+import { Star } from "lucide-react";
+import Counter from "./counter";
+
 const testCard = [
   {
-    "id": 1,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    "price": 109.95,
-    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    "category": "men's clothing",
-    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-    "rating": {
-      "rate": 3.9,
-      "count": 120
-    }
+    id: 1,
+    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price: 109.95,
+    description:
+      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    category: "men's clothing",
+    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    rating: {
+      rate: 3.9,
+      count: 120,
+    },
   },
-  {
-    "id": 2,
-    "title": "Mens Casual Premium Slim Fit T-Shirts ",
-    "price": 22.3,
-    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-    "category": "men's clothing",
-    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
-    "rating": {
-      "rate": 4.1,
-      "count": 259
-    }
-  }
-]
+];
 
-export default function cartItem(){
-  return(
-    <div>
-      <img/>
-      <div>
-        
+export default function cartItem() {
+  return (
+    <div className="m-5 ">
+      <div className="flex flex-row items-center justify-between p-7 text-[#333333]">
+        <div className="flex flex-row">
+          <div className="flex flex-row">
+            <img src={testCard[0].image} className="w-32 h-32 object-contain" />
+            <div className="flex flex-col gap-2 w-2xs">
+              <div>
+                <p className="">{testCard[0].title}</p>
+                <p className="bg-[#854836] text-white px-2 py-1 inline-block">{testCard[0].category}</p>
+              </div>
+            <div className="flex items-center gap-1 text-sm text-gray-600">
+              <Star className="text-[#FFB22C]"/>
+              <p>{testCard[0].rating.rate}</p>
+              <p>({testCard[0].rating.count})</p>
+            </div>
+            <p>{testCard[0].price}</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-between items-center mt-2 gap-12">
+          <Counter />
+          <p className="font-bold text-[#FFB22C]">{testCard[0].price}</p>
+        </div>
       </div>
+      <hr className="text-[#706C61]"></hr>
     </div>
-  )
+  );
 }
