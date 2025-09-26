@@ -18,10 +18,25 @@
 
 
 "use client"
+import { useState, useEffect } from "react";
+import axios from "axios"
 import Navbar from "./navbar";
 import CartItem from "./cartItem";
 
 export default function Home(){
+  const [products, setProducts] = useState([])
+
+useEffect(()=>{
+  getDataProducts();
+}, [])
+
+const getDataProducts = async() =>{
+  const {data} = await axios ("https://fakestoreapi.com/products?limit=5");
+  setProducts(data);
+}
+
+console.log(products)
+
   return(
     <div className="bg-[#F7F7F7] min-h-screen">
       <Navbar />
