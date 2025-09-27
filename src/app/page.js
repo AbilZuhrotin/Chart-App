@@ -8,7 +8,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
 
-  useEffect(() => {
+  useEffect(()=>{
     getDataProducts();
   }, []);
 
@@ -20,7 +20,7 @@ export default function Home() {
   const updateCartQuantity = (productId, newQty) => {
     setCart((prev) => ({
       ...prev,
-      [productId]: Math.max(newQty, 0), // biar nggak minus
+      [productId]: Math.max(newQty, 0), m
     }));
   };
 
