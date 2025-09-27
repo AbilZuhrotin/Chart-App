@@ -20,13 +20,15 @@ export default function Home() {
   const updateCartQuantity = (productId, newQty) => {
     setCart((prev) => ({
       ...prev,
-      [productId]: Math.max(newQty, 0), m
+      [productId]: Math.max(newQty, 0), 
     }));
   };
 
+  const totalItems = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+
   return (
     <div className="bg-[#F7F7F7] min-h-screen">
-      <Navbar />
+      <Navbar totalItems={totalItems} />
       <CartList products={products} cart={cart} updateCartQuantity={updateCartQuantity} />
     </div>
   );
