@@ -5,7 +5,7 @@ export default function CartList({ products, cart, updateCartQuantity }) {
   return (
     <div>
       {products.length == 0 ? (
-        <span className="text-black">Loding</span>
+        <span className="text-white">Loading...</span>
       ) : (
         products.map((product) => (
           <CartItem

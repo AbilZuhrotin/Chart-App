@@ -4,7 +4,7 @@ import Counter from "./counter";
 
 export default function CartItem({ product, qty, updateCartQuantity }) {
   return (
-    <div className="m-5 text-black">
+    <div className="m-5 text-white">
       <div className="flex flex-row flex-wrap p-6 items-center justify-between gap-6">
         <div className="flex flex-row">
           <div className="flex flex-row gap-4 md:gap-12 w-36 items-center">

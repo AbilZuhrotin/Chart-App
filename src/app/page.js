@@ -27,7 +27,7 @@ export default function Home() {
   const totalItems = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
 
   return (
-    <div className="bg-[#F7F7F7] min-h-screen">
+    <div className="bg-black min-h-screen">
       <Navbar totalItems={totalItems} />
       <CartList products={products} cart={cart} updateCartQuantity={updateCartQuantity} />
     </div>
