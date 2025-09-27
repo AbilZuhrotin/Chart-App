@@ -13,8 +13,12 @@ export default function Home() {
   }, []);
 
   const getDataProducts = async () => {
-    const { data } = await axios("https://fakestoreapi.com/products?limit=5");
-    setProducts(data);
+    try{
+      const { data } = await axios("https://fakestoreapi.com/products?limit=5");
+      setProducts(data);
+    } catch (error){
+      console.error("Gagal mengambil data produk:", error);
+    }
   };
 
   const updateCartQuantity = (productId, newQty) => {
