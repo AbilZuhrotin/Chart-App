@@ -1,8 +1,13 @@
 'use client'
 import { Gift } from "lucide-react"
 import {ShoppingBasket} from "lucide-react"
+import { useCartStore } from "./cartStore";
 
-export default function Navbar({totalItems}) {
+export default function Navbar() {
+  const totalItems = useCartStore((state) =>
+        Object.values(state.cart).reduce((sum, qty) => sum + qty, 0)
+    );
+    
     return(
       <nav className="w-full h-24 flex justify-around items-center bg-[#FFB22C]">
         <div className="flex gap-4">

@@ -1,8 +1,13 @@
 'use client'
 import { Star } from "lucide-react";
 import Counter from "./counter";
+import { useCartStore } from "./cartStore";
 
-export default function CartItem({ product, qty, updateCartQuantity }) {
+export default function CartItem({ product }) {
+  const { cart } = useCartStore();
+  const qty = cart[product.id] || 0;
+
+  
   return (
     <div className="m-5 text-white">
       <div className="flex flex-row flex-wrap p-6 items-center justify-between gap-6">
@@ -23,7 +28,7 @@ export default function CartItem({ product, qty, updateCartQuantity }) {
             <p className="font-semibold">${product.price}</p>
           </div>
         </div>
-        <Counter productId={product.id} qty={qty} updateCartQuantity={updateCartQuantity} />
+        <Counter productId={product.id} />
         <p className="w-fit md:w-10 font-bold text-[#FFB22C]">
           {(product.price * qty).toFixed(2)}
         </p>

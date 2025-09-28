@@ -1,7 +1,8 @@
 'use client'
 import CartItem from "./cartItem";
+import { useCartStore } from "./cartStore";
 
-export default function CartList({ products, cart, updateCartQuantity }) {
+export default function CartList({ products }) { 
   return (
     <div>
       {products.length == 0 ? (
@@ -11,8 +12,6 @@ export default function CartList({ products, cart, updateCartQuantity }) {
           <CartItem
             key={product.id}
             product={product}
-            qty={cart[product.id] || 0}
-            updateCartQuantity={updateCartQuantity}
           />
         ))
       )}

@@ -6,7 +6,7 @@ import CartList from "./cartList";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState({});
+
 
   useEffect(()=>{
     getDataProducts();
@@ -21,19 +21,11 @@ export default function Home() {
     }
   };
 
-  const updateCartQuantity = (productId, newQty) => {
-    setCart((prev) => ({
-      ...prev,
-      [productId]: Math.max(newQty, 0), 
-    }));
-  };
-
-  const totalItems = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
-
+  
   return (
     <div className="bg-black min-h-screen">
-      <Navbar totalItems={totalItems} />
-      <CartList products={products} cart={cart} updateCartQuantity={updateCartQuantity} />
+      <Navbar />
+      <CartList products={products} />
     </div>
   );
 }
